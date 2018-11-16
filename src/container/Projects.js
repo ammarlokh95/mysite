@@ -1,53 +1,55 @@
 import React, { Component } from "react";
 import { Carousel, CarouselCaption, CarouselInner, CarouselItem, View, Mask } from "mdbreact";
-import '../css/Carousel.css'
+import '../css/Carousel.css';
+import freebook from '../images/freebook.png';
+import divineright from '../images/divineright.png';
+import landmark from '../images/landmark.png';
 class Projects extends Component {
   render() {
     return (
-      <Carousel activeItem={1} length={4} showControls={true} showIndicators={true} className="z-depth-1" >
+      <div style={{marginBottom:"5%"}}>
+      <Carousel style={{width:"95%", height:"95%", marginLeft:"2.5%", marginTop:"10%"}}activeItem={1} length={3} showControls={true} showIndicators={true} className="z-depth-1" >
         <CarouselInner>
           <CarouselItem itemId="1">
             <View>
-              <img className="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg" alt="First slide" />
+              <img className="d-block w-100" src={freebook} alt="First slide" />
               <Mask overlay="black-light" />
             </View>
-            <CarouselCaption>
-              <h3 className="h3-responsive">Light mask</h3>
-              <p>First text</p>
+            <CarouselCaption className="white-text">
+              <h3 >FreeBook</h3>
+              <h4 >A Social media app that allows you to post and view status updates from your friends
+                and maintain a user profile. This project is under active development by me and will hopefully
+                see many updates soon!
+              </h4>
             </CarouselCaption>
           </CarouselItem>
           <CarouselItem itemId="2">
             <View>
-              <img className="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(99).jpg" alt="Second slide" />
-              <Mask overlay="black-strong" />
+              <img className="d-block w-100" src={divineright} alt="Second slide" />
+              <Mask overlay="black-light" />
             </View>
-            <CarouselCaption>
-              <h3 className="h3-responsive">Strong mask</h3>
-              <p>Second text</p>
+            <CarouselCaption className="white-text">
+              <h3 className="h3-responsive">The Divine Right</h3>
+              <h4>A 2D turn based strategy game akin to GameBoy classic Advanced Warfare. Set in a mythical
+                land of Gods, you play as a lowly God fighting to win the Throne!
+              </h4>
             </CarouselCaption>
           </CarouselItem>
           <CarouselItem itemId="3">
             <View>
-              <img className="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(17).jpg" alt="Third slide" />
-              <Mask overlay="black-slight" />
-            </View>
-            <CarouselCaption>
-              <h3 className="h3-responsive">Slight mask</h3>
-              <p>Third text</p>
-            </CarouselCaption>
-          </CarouselItem>
-          <CarouselItem itemId="4">
-            <View>
-              <img className="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20%28143%29.jpg" alt="Mattonit's item" />
+              <img className="d-block w-100" src={landmark} alt="Third slide" />
               <Mask overlay="black-light" />
             </View>
-            <CarouselCaption>
-              <h3 className="h3-responsive">Sopot Beach</h3>
-              <p>Taken june 21th by @mattonit</p>
+            <CarouselCaption className="white-text">
+              <h3 className="h3-responsive">Landmark</h3>
+              <h4>An Android application that finds your current location and shows you places of interests (Landmarks)
+                around you. Also, allows you to check-in and share your thoughts on Facebook about the places you have visited.
+              </h4>
             </CarouselCaption>
           </CarouselItem>
         </CarouselInner>
       </Carousel>
+      </div>
     );
   }
 }

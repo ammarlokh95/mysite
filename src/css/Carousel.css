@@ -1,19 +1,6 @@
-.carousel {
-	height:-webkit-fill-available;
-	margin: 0;
-	width: 100%;
-}
 
-.carousel-inner {
-	height:-webkit-fill-available;
-}
-
-.carousel-item {
-	height:-webkit-fill-available;
-}
-
-.carousel-item.active{
-	height:-webkit-fill-available;
+.container-fluid.z-depth-1 {
+	background: #a5d5ffb8
 }
 
 .carousel-caption {

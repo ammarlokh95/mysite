@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLink, Fa } from 'mdbreact';
+import { Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, Fa } from 'mdbreact';
 
 class NavigationBar extends Component { 
     
@@ -13,13 +13,6 @@ class NavigationBar extends Component {
         this.handleScroll = this.handleScroll.bind(this);
         this.scrollToMyRef = this.scrollToMyRef.bind(this);
     }
-    componentDidMount() {
-        
-        
-      }
-      componentWillUnmount() {
-      }
-    
       handleScroll() {
         
     }
@@ -27,7 +20,7 @@ class NavigationBar extends Component {
     scrollToMyRef(ref, id) {
         console.log(id)
         window.scrollTo({
-            top:ref.offsetTop, 
+            top:ref.offsetTop - 30, 
             behavior: "smooth"
         })
     }
@@ -41,9 +34,9 @@ class NavigationBar extends Component {
         const bgcyan = {backgroundColor: '#33b5e5'}
         return(
             <Navbar style={bgcyan} dark expand="md" scrolling fixed="top">
-            <NavbarBrand href="/">
+            <a className="navbar-brand" href="/">
                 <strong>Ammar's Website</strong>
-            </NavbarBrand>
+            </a>
             <NavbarToggler onClick={ this.onClick } />
             <Collapse isOpen = { this.state.collapse } navbar>
                 <NavbarNav left>
@@ -53,8 +46,11 @@ class NavigationBar extends Component {
                     <NavItem id='PROJECTS'>
                         <a className='nav-link' onClick={() => this.scrollToMyRef(this.props.scrollRef.current.children[1])}>Projects</a>
                     </NavItem>
-                    <NavItem id='BLOG'>
-                        <a className='nav-link' onClick={() => this.scrollToMyRef(this.props.scrollRef.current.children[2])}>Blog</a>
+                    <NavItem id='RESUME'>
+                        <a className='nav-link' onClick={() => this.scrollToMyRef(this.props.scrollRef.current.children[2])}>Resume</a>
+                    </NavItem>
+                    <NavItem id='CONTACT'>
+                        <a className='nav-link' onClick={() => this.scrollToMyRef(this.props.scrollRef.current.children[3])}>Contact Me</a>
                     </NavItem>
                 </NavbarNav>
                 <NavbarNav right className='nav-flex-icons'>
