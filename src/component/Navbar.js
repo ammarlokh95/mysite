@@ -64,18 +64,20 @@ class NavigationBar extends Component {
 
                 </NavbarNav>
                 <NavbarNav right className='nav-flex-icons'>
+                    {/* eslint-disable react/jsx-no-target-blank */}
                     <NavItem>
-                        <a className='nav-link' href="https://www.linkedin.com/in/ammarl123/"><Fa icon="linkedin" /></a>
+                        <a className='nav-link' target="_blank" href="https://www.linkedin.com/in/ammarl123/"><Fa icon="linkedin" /></a>
                     </NavItem>
                     <NavItem>
-                        <a className='nav-link' href="https://github.com/ammarlokh95"><Fa icon="github" /></a>
+                        <a className='nav-link' target="_blank" href="https://github.com/ammarlokh95"><Fa icon="github" /></a>
                     </NavItem>
                     <NavItem>
-                        <a className='nav-link' href="https://twitter.com/ammarlokh"><Fa icon="twitter" /></a>
+                        <a className='nav-link' target="_blank" href="https://twitter.com/ammarlokh"><Fa icon="twitter" /></a>
                     </NavItem>
                     <NavItem>
-                        <a className='nav-link' href="https://angel.co/ammar-lokhandwala-1"><Fa icon="angellist" /></a>
+                        <a className='nav-link' target="_blank" href="https://angel.co/ammar-lokhandwala-1"><Fa icon="angellist" /></a>
                     </NavItem>
+                    {/* eslint-enable react/jsx-no-target-blank */}
                 </NavbarNav>
                 </Collapse>
 
