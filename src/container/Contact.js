@@ -4,7 +4,8 @@ import React, { Component } from 'react';
 class ContactMe extends Component { 
     render() {
          
-    return <div id='Contact' className="container-fluid z-depth-1" >
+    return <div style={{height:"100%"}} >
+        <div id='Contact' className="container-fluid z-depth-1" style={{width:"60vh"}}>
                 <h3>Contact:</h3>
                 <ul style={{listStyle:"None"}}>
                 <li>
@@ -38,6 +39,8 @@ class ContactMe extends Component {
                 </a>                           
                 </li>
             </ul>
+            <br ></br>
+    </div>
     </div>
     }
 }

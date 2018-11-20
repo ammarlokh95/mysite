@@ -7,9 +7,9 @@ import landmark from '../images/landmark.png';
 class Projects extends Component {
   render() {
     return (
-      <div style={{marginBottom:"5%"}}>
-      <Carousel style={{width:"95%", height:"95%", marginLeft:"2.5%", marginTop:"10%"}}activeItem={1} length={3} showControls={true} showIndicators={true} className="z-depth-1" >
-        <CarouselInner>
+      <div style={{height:"90vh"}}>
+      <Carousel activeItem={1} length={3} showControls={true} showIndicators={true} className="z-depth-1" >
+        <CarouselInner style={{height:"89vh"}}>
           <CarouselItem itemId="1">
             <View>
               <img className="d-block w-100" src={freebook} alt="First slide" />

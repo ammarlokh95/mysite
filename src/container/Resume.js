@@ -3,9 +3,9 @@ import resume from '../images/resume.jpg';
 class Resume extends Component { 
     render() {
          
-    return <div style={{width:"80%", height:"-webkit-fill-availaible", margin:"5%", marginLeft:"20%"}} id='Resume' >   
+    return <div style={{ height:"-webkit-fill-availaible", marginLeft:"25%", marginRight:"25%"}} id='Resume' >   
         <a href={process.env.PUBLIC_URL + '/resume.pdf'}>
-        <img className="z-depth-1" src={resume} alt="My Resume" style={{height:"1000px", width:"600px"}}/>
+        <img className="z-depth-1" src={resume} alt="My Resume" style={{height:"100%", width:"100%"}}/>
         </a>
     </div>
     }

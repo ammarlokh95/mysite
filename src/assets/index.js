@@ -1,1 +1,0 @@
-export {resume} from './resume.pdf'; 

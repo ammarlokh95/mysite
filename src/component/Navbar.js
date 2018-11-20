@@ -1,35 +1,34 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, Fa } from 'mdbreact';
+import { Navbar, NavbarNav, NavbarToggler, Collapse, NavItem, Fa } from 'mdbreact';
 
 class NavigationBar extends Component { 
     
     constructor(props) {
         super(props)
-        this.scrollToMyRef = this.scrollToMyRef.bind(this)
         this.state = {
             collapse: false,
         };
-        this.onClick = this.onClick.bind(this);
-        this.handleScroll = this.handleScroll.bind(this);
-        this.scrollToMyRef = this.scrollToMyRef.bind(this);
-    }
-      handleScroll() {
-        
+        this.onClickToggler = this.onClickToggler.bind(this);
+        this.onClickLink = this.onClickLink.bind(this); 
+        this.isActive = this.isActive.bind(this);
     }
 
-    scrollToMyRef(ref, id) {
-        console.log(id)
-        window.scrollTo({
-            top:ref.offsetTop - 30, 
-            behavior: "smooth"
-        })
-    }
-
-    onClick(){
+    onClickToggler(){
         this.setState({
             collapse: !this.state.collapse,
           });
       }
+
+    onClickLink(id) {
+        this.props.scrollTo(id);
+        if(this.state.collapse === true)
+            this.onClickToggler();
+    }
+    isActive(id) {
+        if (this.state.activeLink === id)
+            return NavItem.active
+        else return null
+    }
     render() {
         const bgcyan = {backgroundColor: '#33b5e5'}
         return(
@@ -37,21 +36,32 @@ class NavigationBar extends Component {
             <a className="navbar-brand" href="/">
                 <strong>Ammar's Website</strong>
             </a>
-            <NavbarToggler onClick={ this.onClick } />
+            <NavbarToggler onClick={ this.onClickToggler } />
             <Collapse isOpen = { this.state.collapse } navbar>
                 <NavbarNav left>
+                {/* eslint-disable jsx-a11y/anchor-is-valid */}
+                    <NavItem id='PROJECTS' >
+                        <a className='nav-link' onClick={() => {
+                            this.onClickLink(0);
+                        }}>Projects</a>
+                    </NavItem>
                     <NavItem id='ABOUT' >
-                        <a className='nav-link' onClick={() => this.scrollToMyRef(this.props.scrollRef.current)}>About</a>
+                        <a className='nav-link' onClick={() => {
+                            this.onClickLink(1);
+                        }}>About Me</a>
                     </NavItem>
-                    <NavItem id='PROJECTS'>
-                        <a className='nav-link' onClick={() => this.scrollToMyRef(this.props.scrollRef.current.children[1])}>Projects</a>
+                    <NavItem id='RESUME' >
+                        <a className='nav-link' onClick={() => {
+                            this.onClickLink(2);
+                        }}>Resume</a>
                     </NavItem>
-                    <NavItem id='RESUME'>
-                        <a className='nav-link' onClick={() => this.scrollToMyRef(this.props.scrollRef.current.children[2])}>Resume</a>
+                    <NavItem id='CONTACT' >
+                        <a className='nav-link' onClick={() => {
+                            this.onClickLink(3);
+                        }}>Contact Me</a>
                     </NavItem>
-                    <NavItem id='CONTACT'>
-                        <a className='nav-link' onClick={() => this.scrollToMyRef(this.props.scrollRef.current.children[3])}>Contact Me</a>
-                    </NavItem>
+                    {/* eslint-enable jsx-a11y/anchor-is-valid */}
+
                 </NavbarNav>
                 <NavbarNav right className='nav-flex-icons'>
                     <NavItem>
